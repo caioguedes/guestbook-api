@@ -1,11 +1,10 @@
 (ns guestbook-api.core
-  (:require [compojure.core :refer [GET defroutes]])
+  (:require [compojure.core :refer [GET defroutes context]]
+            [ring.util.response :as response])
   (:gen-class))
 
 (defroutes app-routes
-           (GET "/" [] {:status 200
-                        :headers {"Content-Type" "text/plain"}
-                        :body "Hello World"}))
+           (GET "/" [] (response/content-type (response/response "Hello World") "text/plain")))
 
 (def app
   app-routes)
