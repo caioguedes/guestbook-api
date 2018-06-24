@@ -4,6 +4,9 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]]
+  :plugins [[lein-ring "0.12.4"]]
+  :ring {:handler guestbook-api.core/handler}
   :main ^:skip-aot guestbook-api.core
   :target-path "target/%s"
-  :profiles {:uberjar {:aot :all}})
+  :profiles {:uberjar {:aot :all}
+             :dev     {:dependencies [[ring/ring-devel "1.6.3"]]}})
