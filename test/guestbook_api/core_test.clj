@@ -14,7 +14,11 @@
 
   (testing "list messages endpoint"
     (let [response (app (request :get "/api/v1/messages"))
-          expected-body {:messages []}]
+          expected-body {:messages [{:id "1"
+                                     :name "Caio Guedes"
+                                     :email "caio.cesar.g.souza@example.com"
+                                     :comment "♫ You are so cool! ♫"
+                                     :created_at "2018-06-24T18:28:07-03:00"}]}]
       (is (= {:status 200
               :headers {"Content-Type" "application/json; charset=utf-8"}
               :body (generate-string expected-body)}
