@@ -8,3 +8,6 @@
 
 (defn get-message-list []
   [message])
+
+(defn get-message [id]
+  message)
