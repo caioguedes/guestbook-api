@@ -15,5 +15,5 @@
     (let [response (app (request :get "/api/v1/messages"))]
       (is (= {:status 200
               :headers {"Content-Type" "application/json; charset=utf-8"}
-              :body "{messages:[]}"}
+              :body "{\"messages\":[]}"}
              response)))))

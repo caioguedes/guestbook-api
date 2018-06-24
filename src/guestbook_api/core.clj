@@ -7,7 +7,7 @@
            (GET "/" []
              (response/content-type (response/response "Hello World") "text/plain"))
            (GET "/api/v1/messages" []
-             (response/content-type (response/response "{messages:[]}") "application/json; charset=utf-8")))
+             (response/content-type (response/response "{\"messages\":[]}") "application/json; charset=utf-8")))
 
 (def app
   app-routes)
