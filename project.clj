@@ -10,4 +10,5 @@
   :main ^:skip-aot guestbook-api.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}
-             :dev     {:dependencies [[ring/ring-devel "1.6.3"]]}})
+             :dev     {:dependencies [[ring/ring-devel "1.6.3"]
+                                      [ring/ring-mock "0.3.2"]]}})
