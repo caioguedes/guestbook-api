@@ -4,7 +4,8 @@
   (:gen-class))
 
 (defroutes app-routes
-           (GET "/" [] (response/content-type (response/response "Hello World") "text/plain")))
+           (GET "/" [] (response/content-type (response/response "Hello World") "text/plain"))
+           (GET "/api/v1/messages" [] (response/content-type (response/response "{messages:[]}") "application/json")))
 
 (def app
   app-routes)
