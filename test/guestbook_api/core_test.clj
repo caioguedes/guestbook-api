@@ -36,4 +36,12 @@
               :headers {"Content-Type" "application/json; charset=utf-8"}
               :body (generate-string expected-body)}
              response))
-      (is (= expected-body (parse-string (:body response) true))))))
+      (is (= expected-body (parse-string (:body response) true)))))
+
+  (testing "resource not found"
+    (let [response (app (request :get "/api/v1/wrong-resource"))
+          expected-body {:message "Resource not found."}]
+      (is (= {:status 404
+              :headers {"Content-Type" "application/json; charset=utf-8"}
+              :body (generate-string expected-body)}
+             response)))))
